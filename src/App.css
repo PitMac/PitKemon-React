@@ -1,0 +1,17 @@
+a {
+  display: flex;
+}
+
+.favorites-link {
+  font-weight: bold;
+}
+
+.favorites-link:hover {
+  text-decoration: underline;
+  text-decoration-color: #ee8329;
+
+}
+
+.pokemon-card:hover{
+  box-shadow: 2px 2px #ee8329;
+}
