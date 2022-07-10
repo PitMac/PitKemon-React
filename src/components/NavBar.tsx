@@ -40,7 +40,7 @@ export const NavBar = () => {
       </Link>
 
       <Spacer css={{ flex: 1 }} />
-      <Link to="/">
+      <Link to="/favorites">
         <a>
           <Text className="favorites-link" color="white">
             Favorites

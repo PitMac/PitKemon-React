@@ -1,9 +1,6 @@
 import { Container, Grid, Input, Loading } from "@nextui-org/react";
-import React, { useEffect, useState } from "react";
-import { getAllPokemon } from "../api/fetchPokemon";
 import { PokemonItem } from "../components/PokemonCard";
 import { usePokemons } from "../hooks/usePokemons";
-import { SmallPokemon } from "../interfaces/pokemon-list";
 
 export const PokemonList = () => {
   const { setQuery, isLoading, pokemons } = usePokemons();

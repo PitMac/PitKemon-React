@@ -5,6 +5,6 @@ export const darkTheme = createTheme({
   theme: {
     colors: {
       primary: "#ee8329",
-    }, // override dark theme colors
+    },
   },
 });
