@@ -4,6 +4,7 @@ a {
 
 .favorites-link {
   font-weight: bold;
+  transition: text-decoration .5s;
 }
 
 .favorites-link:hover {
@@ -12,7 +13,7 @@ a {
 }
 
 .pokemon-card:hover{
-  box-shadow: 2px 2px #bb6620;
+  box-shadow: 2px 2px #ee8329;
 }
 
 .sprites-list{

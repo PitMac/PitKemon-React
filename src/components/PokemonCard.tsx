@@ -35,7 +35,6 @@ export const PokemonItem = ({ pokemon }: Props) => {
             css={{
               mw: "600px",
               cursor: "pointer",
-              boxShadow: "2px 2px #ee8329",
             }}
           >
             <Card.Body>
