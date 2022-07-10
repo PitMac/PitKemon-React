@@ -9,9 +9,29 @@ a {
 .favorites-link:hover {
   text-decoration: underline;
   text-decoration-color: #ee8329;
-
 }
 
 .pokemon-card:hover{
-  box-shadow: 2px 2px #ee8329;
+  box-shadow: 2px 2px #bb6620;
+}
+
+.sprites-list{
+  display: flex;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  justify-self: center;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+  ul {
+    margin: 20px 0px;
+  }
+  .pokemons {
+    /* margin: 0; */
+    padding: 0;
+  }
 }

@@ -1,4 +1,4 @@
-import { Card, Grid, Text } from "@nextui-org/react";
+import { Card, Container, Grid, Loading, Text } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { SmallPokemon } from "../interfaces/pokemon-list";
@@ -8,15 +8,16 @@ interface Props {
 }
 
 export const PokemonItem = ({ pokemon }: Props) => {
-  const [image, setImage] = useState<string>(
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
-  );
+  const [isLoading, setIsLoading] = useState(true);
+  const [image, setImage] = useState<string>("");
 
-  const getImage = () => {
+  const getImage = async () => {
+    setIsLoading(true);
     const urlParts = pokemon.url.split("/");
     const id = urlParts[urlParts.length - 2];
     const picture = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
     setImage(picture);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -31,22 +32,40 @@ export const PokemonItem = ({ pokemon }: Props) => {
             className="pokemon-card"
             isHoverable
             variant="bordered"
-            css={{ mw: "600px", cursor: "pointer" }}
+            css={{
+              mw: "600px",
+              cursor: "pointer",
+              boxShadow: "2px 2px #ee8329",
+            }}
           >
             <Card.Body>
-              <img
-                src={image}
-                style={{ objectFit: "contain" }}
-                width={300}
-                height={300}
-              />
+              {isLoading ? (
+                <Container
+                  css={{
+                    textAlign: "center",
+                    marginTop: "$20",
+                    width: "200px",
+                    height: "100px",
+                  }}
+                >
+                  <Loading size="xl" color="warning" type="points" />
+                </Container>
+              ) : (
+                <img
+                  src={image}
+                  style={{ objectFit: "contain" }}
+                  width={300}
+                  height={300}
+                />
+              )}
+
               <Text
                 css={{
                   textAlign: "center",
                 }}
-                h2
+                h3
               >
-                {pokemon.name}
+                {pokemon.name.toUpperCase()}
               </Text>
             </Card.Body>
           </Card>

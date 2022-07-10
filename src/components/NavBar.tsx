@@ -4,7 +4,7 @@ import { Link } from "wouter";
 export const NavBar = () => {
   const { theme } = useTheme();
   return (
-    <div
+    <nav
       style={{
         display: "flex",
         width: "100%",
@@ -12,6 +12,7 @@ export const NavBar = () => {
         alignItems: "center",
         justifyContent: "start",
         padding: "0px 20px",
+        height: "7vh",
         backgroundColor: theme?.colors.gray50.value,
       }}
     >
@@ -46,6 +47,6 @@ export const NavBar = () => {
           </Text>
         </a>
       </Link>
-    </div>
+    </nav>
   );
 };

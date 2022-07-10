@@ -9,8 +9,10 @@ export const PokemonList = () => {
   const { setQuery, isLoading, pokemons } = usePokemons();
 
   return (
-    <div>
-      <Container css={{ textAlign: "center", marginTop: "$10" }}>
+    <div style={{ minHeight: "83.2vh" }}>
+      <Container
+        css={{ textAlign: "center", marginTop: "$10", marginBottom: "$10" }}
+      >
         <Input
           aria-label="Search"
           onChange={(e) => setQuery(e.target.value)}
@@ -26,7 +28,7 @@ export const PokemonList = () => {
         </Container>
       ) : (
         <ul>
-          <Grid.Container gap={2} justify="center">
+          <Grid.Container className="pokemons" gap={2} justify="center">
             {pokemons.map((pokemon) => (
               <PokemonItem key={pokemon.name} pokemon={pokemon} />
             ))}
